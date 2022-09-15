@@ -1,3 +1,3 @@
 # UVP_projekt
-Projektna naloga pri predmetu Uvod v programiranje  
-.vjhas.v.v
+V sklopu predmeta Uvod v programiranje v prvem letniku Finančne matematike na Fakulteti za matematiko in fiziko sem se lotil te projektne naloge.
+

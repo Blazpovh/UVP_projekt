@@ -20,13 +20,13 @@ def pokazi_rezultat():
     gender = bottle.request.forms.getunicode("gender")
     weigh = bottle.request.forms.getunicode("weigh")
     food = bottle.request.forms.getunicode("food")
-    wine_number = bottle.request.forms.getunicode("wine_number")
-    big_beer_number = bottle.request.forms.getunicode("big_beer_number")
-    small_beer_number = bottle.request.forms.getunicode("small_beer_number")
-    small_shot_number = bottle.request.forms.getunicode("small_shot_number")
-    single_shot_number = bottle.request.forms.getunicode("single_shot_number")
-    doublle_shot_number = bottle.request.forms.getunicode("doublle_shot_number")
-    champagne_number = bottle.request.forms.getunicode("champagne_number")
+    wine_number = int(bottle.request.forms.getunicode("wine_number"))
+    big_beer_number =int(bottle.request.forms.getunicode("big_beer_number"))
+    small_beer_number = int(bottle.request.forms.getunicode("small_beer_number"))
+    small_shot_number = int(bottle.request.forms.getunicode("small_shot_number"))
+    single_shot_number = int(bottle.request.forms.getunicode("single_shot_number"))
+    doublle_shot_number = int(bottle.request.forms.getunicode("doublle_shot_number"))
+    champagne_number = int(bottle.request.forms.getunicode("champagne_number"))
     seznamcek = []
     seznamcek += int(wine_number) * ['kozarcek_vina']
     seznamcek += int(big_beer_number) * ['veliko_pivo']
@@ -37,6 +37,8 @@ def pokazi_rezultat():
     seznamcek += int(champagne_number) * ['sampanjec']
     podatki = glavni.Oseba(gender, int(age), int(weigh), food, seznamcek)
     rezultat = podatki.stevilo_ur()
+    print('------------------------------------')
+    print(rezultat, food, seznamcek)
     return bottle.template("rezultat.tpl",
                             age = age,
                             gender = gender,
@@ -44,10 +46,10 @@ def pokazi_rezultat():
                             food = food,
                             seznamcek = seznamcek,
                             rezultat = rezultat)
-
+                            
 @bottle.get("/princip_racunanja/")
 def pokazi_princip():
     return bottle.template("pojasnila.tpl")
 
-bottle.run(debug=True)
+bottle.run(debug=False)
 

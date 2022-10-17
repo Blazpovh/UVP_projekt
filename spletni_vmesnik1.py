@@ -37,8 +37,6 @@ def pokazi_rezultat():
     seznamcek += int(champagne_number) * ['sampanjec']
     podatki = glavni.Oseba(gender, int(age), int(weigh), food, seznamcek)
     rezultat = podatki.stevilo_ur()
-    print('------------------------------------')
-    print(rezultat, food, seznamcek)
     return bottle.template("rezultat.tpl",
                             age = age,
                             gender = gender,

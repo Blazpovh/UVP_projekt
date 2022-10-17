@@ -7,8 +7,11 @@
 <div>
   Prosim upoštevaj opombo v oklepajih in vnesi tako vrednost, ki piše v oklepajih.
 </div>
+<div>
+  Prosim tudi, da izračuna ne uporabljate osebe mlajše od 18 let, saj program ne bo deloval, ker vsebina izračuna ni primerna za mladoletne!
+</div>
 
-<form action="/igra/" method="post">
+<form action="/igra/" method="POST">
     <b>Tvoja starost(naravno stevilo):</b>
     <input type="text" name="age" autofocus autocomplete="off">
     <b>Tvoj spol(M ali Ž):</b>
